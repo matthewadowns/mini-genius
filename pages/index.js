@@ -1,6 +1,8 @@
-import { Flex, Button, Input } from "@chakra-ui/react";
 import Head from "next/head";
 import Image from "next/image";
+
+import SearchGenius from "../components/SearchGenius";
+
 import styles from "../styles/Home.module.css";
 
 export default function Home() {
@@ -25,22 +27,7 @@ export default function Home() {
                     <a href="https://rapidapi.com">RapidAPI</a>
                 </p>
 
-                <Flex
-                    bg="blackAlpha.50"
-                    borderRadius="base"
-                    color="purple.700"
-                    flexDirection="column"
-                    p={4}
-                    w="60%"
-                >
-                    <Input
-                        boxShadow="sm"
-                        placeholder="Search by lyrics, song, or artist..."
-                    />
-                    <Button boxShadow="sm" colorScheme="purple" mt={4}>
-                        Search
-                    </Button>
-                </Flex>
+                <SearchGenius />
             </main>
 
             <footer className={styles.footer}>
