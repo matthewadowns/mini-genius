@@ -1,8 +1,28 @@
 import { Box, SlideFade } from "@chakra-ui/react";
+import ResultItem from "./ResultItem";
 
-function ResultsList({ results }) {
+function ResultsList({ query, results }) {
+    const hasResults = results.length > 0;
+    if (!query) return null;
+
+    if (!hasResults) {
+        return (
+            <Box
+                bg="red.50"
+                borderRadius="base"
+                boxShadow="sm"
+                color="gray.700"
+                mt={4}
+                p={4}
+            >
+                Nothing found for the current search. Try a different lyric,
+                artist name, or song title.
+            </Box>
+        );
+    }
+
     return (
-        <SlideFade in={results.length > 0}>
+        <SlideFade in={hasResults}>
             <Box
                 bg="purple.100"
                 borderRadius="base"
@@ -12,7 +32,7 @@ function ResultsList({ results }) {
             >
                 {results.map(({ result }) => {
                     console.log("each result", result);
-                    return <div key={result.id}>{result.full_title}</div>;
+                    return <ResultItem result={result} />;
                 })}
             </Box>
         </SlideFade>

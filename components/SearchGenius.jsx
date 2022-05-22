@@ -59,7 +59,7 @@ function SearchGenius() {
             color="purple.700"
             flexDirection="column"
             p={4}
-            w="60%"
+            w={["100%", "80%", "60%", "60%"]}
         >
             <FormControl isReadOnly={false}>
                 <Input
@@ -70,7 +70,7 @@ function SearchGenius() {
                 {isLoading && <Progress size="xs" isIndeterminate />}
                 <FormErrorMessage>{error}</FormErrorMessage>
             </FormControl>
-            <ResultsList results={results} />
+            {!isLoading && <ResultsList query={query} results={results} />}
         </Flex>
     );
 }

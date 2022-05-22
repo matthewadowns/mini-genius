@@ -19,14 +19,12 @@ export default function Home() {
 
             <main className={styles.main}>
                 <h1 className={styles.title}>Welcome to Mini Genius</h1>
-
                 <p className={styles.description}>
-                    A NextJS app to search Songs, Artists and Lyrics. Get Lyric
-                    information for any Artist or Song from{" "}
+                    A simple NextJS app to search Songs, Artists and Lyrics. Get
+                    Lyric information for any Artist or Song from{" "}
                     <a href="http://genius.com">Genius.com</a>, using{" "}
                     <a href="https://rapidapi.com">RapidAPI</a>
                 </p>
-
                 <SearchGenius />
             </main>
 
