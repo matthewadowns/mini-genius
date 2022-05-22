@@ -31,8 +31,7 @@ function ResultsList({ query, results }) {
                 p={4}
             >
                 {results.map(({ result }) => {
-                    console.log("each result", result);
-                    return <ResultItem result={result} />;
+                    return <ResultItem key={result.id} result={result} />;
                 })}
             </Box>
         </SlideFade>

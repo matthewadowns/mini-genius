@@ -7,7 +7,6 @@ import {
     StatNumber,
     StatHelpText,
 } from "@chakra-ui/react";
-import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 function ResultItem({ result }) {
     return (
