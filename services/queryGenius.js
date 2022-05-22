@@ -4,9 +4,9 @@ const GENIUS_SEARCH_URL = "https://genius.p.rapidapi.com/search";
 const RAPID_API_KEY = "aeba5ecb0cmsh63bd8d2cab240d8p11745bjsn7d438afe4288";
 const RAPID_API_HOST = "genius.p.rapidapi.com";
 
-async function useGenius(query) {
-    console.log("useGenius", query);
-    if (query === "") return { results: null, error: null, isLoading: false };
+async function queryGenius(query) {
+    console.log("queryGenius", query);
+    if (query === "") return [];
 
     const options = {
         method: "GET",
@@ -17,20 +17,12 @@ async function useGenius(query) {
             "X-RapidAPI-Key": RAPID_API_KEY,
         },
     };
-    let data = [];
-    let error = null;
 
-    data = await axios
+    const results = await axios
         .request(options)
-        .then((res) => res.data.response.hits)
-        .catch((err) => (error = err));
+        .then((res) => res.data.response.hits);
 
-    console.log("data", data);
-    return {
-        results: data,
-        error: error,
-        isLoading: !error && !data.length > 0,
-    };
+    return results;
 }
 
-export default useGenius;
+export default queryGenius;
