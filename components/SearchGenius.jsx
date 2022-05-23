@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import useGenius from "../hooks/useGenius";
 import ResultsList from "./ResultsList";
 
-const DEBOUNCE_INTERVAL = 2000;
+const DEBOUNCE_INTERVAL = 1200;
 const QUERY_THRESHOLD = 3;
 
 function SearchGenius() {

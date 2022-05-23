@@ -6,8 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -35,7 +33,7 @@ npm run test
 5. Created 3 components:
   - `SearchGenius` 
     - Provides user input and leverages `useGenius` to make requests. 
-    - Includes debounce so requests are only made every 2s while user is typing.
+    - Includes debounce so requests are only made every 1.2s while user is typing.
     - Includes user-centric unit tests
   - `ResultsList`
     - Renders message when no results are returned
