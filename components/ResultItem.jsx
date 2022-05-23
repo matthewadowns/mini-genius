@@ -13,12 +13,20 @@ function ResultItem({ result }) {
         <Flex color="black" mt={4} wrap="wrap">
             <Stat>
                 <StatLabel>
-                    <Link href={result.primary_artist.url}>
+                    <Link
+                        href={result.primary_artist.url}
+                        title="View artist page on Genius"
+                    >
                         {result.artist_names}
                     </Link>
                 </StatLabel>
                 <StatNumber>
-                    <Link color="teal.500" href={result.url} isExternal={true}>
+                    <Link
+                        color="teal.500"
+                        href={result.url}
+                        isExternal={true}
+                        title="Full lyrics on Genius"
+                    >
                         {result.title}
                     </Link>
                     {result.stats.hot && "🔥"}

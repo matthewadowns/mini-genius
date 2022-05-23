@@ -22,8 +22,21 @@ export default function Home() {
                 <p className={styles.description}>
                     A simple NextJS app to search Songs, Artists and Lyrics. Get
                     Lyric information for any Artist or Song from{" "}
-                    <a href="http://genius.com">Genius.com</a>, using{" "}
-                    <a href="https://rapidapi.com">RapidAPI</a>
+                    <a
+                        href="http://genius.com"
+                        title="Go to genius.com"
+                        target="_blank"
+                    >
+                        Genius.com
+                    </a>
+                    , using{" "}
+                    <a
+                        href="https://rapidapi.com"
+                        title="Go to rapidapi.com"
+                        target="_blank"
+                    >
+                        RapidAPI
+                    </a>
                 </p>
                 <SearchGenius />
             </main>
@@ -32,6 +45,7 @@ export default function Home() {
                 <a
                     href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
                     target="_blank"
+                    title="Go to Vercel"
                     rel="noopener noreferrer"
                 >
                     Powered by{" "}
