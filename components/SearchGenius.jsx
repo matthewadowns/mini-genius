@@ -6,7 +6,7 @@ import {
     Progress,
 } from "@chakra-ui/react";
 import { debounce } from "lodash";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import useGenius from "../hooks/useGenius";
 import ResultsList from "./ResultsList";
