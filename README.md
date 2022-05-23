@@ -20,9 +20,33 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 ### Run Jest Unit Tests
 
+Uses (`jest`)[https://jestjs.io/docs] and (`@testing-library/react`)[https://testing-library.com/docs/react-testing-library/intro/] to unit test React components.
+
 ```bash
 npm run test
 ```
+
+## Project Overview
+
+1. Added a service (`queryGenius`) that uses (`axios`)[https://axios-http.com/docs/intro] for HTTP requests.
+  - Only makes `GET` requests when user input is not empty
+3. Added a custom React hook (`useGenius`) for using `queryGenius` in React components
+  - A resusable hook that returns an object with `error`, `isLoading` and `results` to components
+5. Created 3 components:
+  - `SearchGenius` 
+    - Provides user input and leverages `useGenius` to make requests. 
+    - Includes debounce so requests are only made every 2s while user is typing.
+    - Includes user-centric unit tests
+  - `ResultsList`
+    - Renders message when no results are returned
+    - Renders a `ResultItem` for each result returned
+    - Indicates number of results shown, including when maximum (10) is reached 
+  - `ResultItem`
+    - Displays details of each search result for the user query
+
+## UI
+
+![image](https://user-images.githubusercontent.com/1906670/169914632-64b3728b-cb46-483a-8133-798b89700794.png)
 
 ## Learn More
 
