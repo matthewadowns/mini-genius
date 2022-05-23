@@ -27,7 +27,7 @@ function ResultsList({ query, results }) {
 
     return (
         <SlideFade data-testid="results-wrapper" in={hasResults}>
-            <Box bg="gray.50" borderRadius="base" boxShadow="sm" mt={4} p={4}>
+            <Box mt={4} p={4}>
                 <Box align="right">
                     {results.length} results{" "}
                     {results.length === MAX_RESULTS && "(max)"}
