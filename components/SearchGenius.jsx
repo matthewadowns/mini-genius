@@ -6,7 +6,7 @@ import {
     Progress,
 } from "@chakra-ui/react";
 import { debounce } from "lodash";
-import { useState } from "react";
+import React, { useState } from "react";
 
 import useGenius from "../hooks/useGenius";
 import ResultsList from "./ResultsList";
@@ -45,20 +45,41 @@ function SearchGenius() {
             bg="blackAlpha.50"
             borderRadius="base"
             color="purple.700"
+            data-testid="search-form-wrapper"
             flexDirection="column"
             p={4}
             w={["100%", "80%", "60%", "60%"]}
         >
-            <FormControl isReadOnly={false}>
+            <FormControl
+                data-testid="search-form"
+                isInvalid={error !== null}
+                isReadOnly={false}
+            >
                 <Input
                     boxShadow="sm"
+                    data-testid="search-input"
                     placeholder="Enter lyrics, song, or artist to search..."
                     onChange={handleChange}
                 />
-                {isLoading && <Progress mt={4} size="xs" isIndeterminate />}
-                <FormErrorMessage>{error}</FormErrorMessage>
+                {isLoading && (
+                    <Progress
+                        data-testid="loading-indicator"
+                        mt={4}
+                        size="xs"
+                        isIndeterminate
+                    />
+                )}
+                <FormErrorMessage data-testid="error-indicator">
+                    {error}
+                </FormErrorMessage>
             </FormControl>
-            {!isLoading && <ResultsList query={query} results={results} />}
+            {!isLoading && (
+                <ResultsList
+                    data-testid="results-list"
+                    query={query}
+                    results={results}
+                />
+            )}
         </Flex>
     );
 }

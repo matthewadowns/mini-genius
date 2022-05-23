@@ -5,7 +5,6 @@ const RAPID_API_KEY = "aeba5ecb0cmsh63bd8d2cab240d8p11745bjsn7d438afe4288";
 const RAPID_API_HOST = "genius.p.rapidapi.com";
 
 async function queryGenius(query) {
-    console.log("queryGenius", query);
     if (query === "") return [];
 
     const options = {

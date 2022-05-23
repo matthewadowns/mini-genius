@@ -1,4 +1,5 @@
 import { Box, SlideFade } from "@chakra-ui/react";
+import React from "react";
 import ResultItem from "./ResultItem";
 
 const MAX_RESULTS = 10;
@@ -14,6 +15,7 @@ function ResultsList({ query, results }) {
                 borderRadius="base"
                 boxShadow="sm"
                 color="gray.700"
+                data-testid="no-results-indicator"
                 mt={4}
                 p={4}
             >
@@ -24,7 +26,7 @@ function ResultsList({ query, results }) {
     }
 
     return (
-        <SlideFade in={hasResults}>
+        <SlideFade data-testid="results-wrapper" in={hasResults}>
             <Box bg="gray.50" borderRadius="base" boxShadow="sm" mt={4} p={4}>
                 <Box align="right">
                     {results.length} results{" "}

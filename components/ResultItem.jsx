@@ -7,6 +7,7 @@ import {
     StatNumber,
     StatHelpText,
 } from "@chakra-ui/react";
+import React from "react";
 
 function ResultItem({ result }) {
     return (
@@ -14,6 +15,7 @@ function ResultItem({ result }) {
             bg="purple.100"
             borderRadius="base"
             color="black"
+            data-testid="result-item-wrapper"
             mt={4}
             p={4}
             wrap="wrap"
