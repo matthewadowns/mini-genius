@@ -1,6 +1,8 @@
 import { Box, SlideFade } from "@chakra-ui/react";
 import ResultItem from "./ResultItem";
 
+const MAX_RESULTS = 10;
+
 function ResultsList({ query, results }) {
     const hasResults = results.length > 0;
     if (!query) return null;
@@ -24,6 +26,10 @@ function ResultsList({ query, results }) {
     return (
         <SlideFade in={hasResults}>
             <Box bg="gray.50" borderRadius="base" boxShadow="sm" mt={4} p={4}>
+                <Box align="right">
+                    {results.length} results{" "}
+                    {results.length === MAX_RESULTS && "(max)"}
+                </Box>
                 {results.map(({ result }) => {
                     return <ResultItem key={result.id} result={result} />;
                 })}
