@@ -44,7 +44,6 @@ function SearchGenius() {
         <Flex
             bg="blackAlpha.50"
             borderRadius="base"
-            color="purple.700"
             data-testid="search-form-wrapper"
             flexDirection="column"
             p={4}
