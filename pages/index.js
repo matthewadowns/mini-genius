@@ -28,6 +28,7 @@ export default function Home() {
                     . Get information for any Lyrics, Artist or Song from{" "}
                     <a
                         href="http://genius.com"
+                        rel="noopener noreferrer"
                         title="Go to genius.com"
                         target="_blank"
                     >
@@ -36,6 +37,7 @@ export default function Home() {
                     , using{" "}
                     <a
                         href="https://rapidapi.com"
+                        rel="noopener noreferrer"
                         title="Go to rapidapi.com"
                         target="_blank"
                     >
@@ -48,9 +50,9 @@ export default function Home() {
             <footer className={styles.footer}>
                 <a
                     href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+                    rel="noopener noreferrer"
                     target="_blank"
                     title="Go to Vercel"
-                    rel="noopener noreferrer"
                 >
                     Powered by{" "}
                     <span className={styles.logo}>
