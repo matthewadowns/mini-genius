@@ -10,7 +10,14 @@ import {
 
 function ResultItem({ result }) {
     return (
-        <Flex color="black" mt={4} wrap="wrap">
+        <Flex
+            bg="purple.100"
+            borderRadius="base"
+            color="black"
+            mt={4}
+            p={4}
+            wrap="wrap"
+        >
             <Stat>
                 <StatLabel>
                     <Link
@@ -33,9 +40,7 @@ function ResultItem({ result }) {
                 </StatNumber>
                 <StatHelpText>
                     {result.release_date_for_display && (
-                        <span>
-                            Released on: {result.release_date_for_display}
-                        </span>
+                        <em>Released on: {result.release_date_for_display}</em>
                     )}
                 </StatHelpText>
             </Stat>
@@ -44,6 +49,7 @@ function ResultItem({ result }) {
                 boxSize="100px"
                 objectFit="cover"
                 src={result.header_image_thumbnail_url}
+                title={`Album thumbnail for ${result.full_title}`}
             />
         </Flex>
     );

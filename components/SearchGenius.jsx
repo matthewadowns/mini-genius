@@ -8,28 +8,15 @@ import {
 import { debounce } from "lodash";
 import { useEffect, useState } from "react";
 
-import queryGenius from "../services/queryGenius";
+import useGenius from "../hooks/useGenius";
 import ResultsList from "./ResultsList";
 
 const DEBOUNCE_INTERVAL = 2000;
 const QUERY_THRESHOLD = 3;
 
 function SearchGenius() {
-    const [error, setError] = useState(null);
     const [query, setQuery] = useState("");
-    const [results, setResults] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-
-    useEffect(() => {
-        queryGenius(query)
-            .then((response) => {
-                if (response) {
-                    setIsLoading(false);
-                    setResults(response);
-                }
-            })
-            .catch((error) => setError(error));
-    }, [query]);
+    const { error, isLoading, results } = useGenius(query);
 
     const debounceSetQuery = debounce(
         (query) => setQuery(query),
@@ -50,8 +37,6 @@ function SearchGenius() {
             return;
         }
 
-        setIsLoading(true);
-
         debounceSetQuery(query);
     };
 
@@ -70,7 +55,7 @@ function SearchGenius() {
                     placeholder="Enter lyrics, song, or artist to search..."
                     onChange={handleChange}
                 />
-                {isLoading && <Progress size="xs" isIndeterminate />}
+                {isLoading && <Progress mt={4} size="xs" isIndeterminate />}
                 <FormErrorMessage>{error}</FormErrorMessage>
             </FormControl>
             {!isLoading && <ResultsList query={query} results={results} />}
