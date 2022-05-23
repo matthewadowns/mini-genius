@@ -1,7 +1,6 @@
 import { ChakraProvider } from "@chakra-ui/react";
 import React from "react";
 
-import "regenerator-runtime/runtime";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
