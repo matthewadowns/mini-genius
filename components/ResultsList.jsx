@@ -23,13 +23,7 @@ function ResultsList({ query, results }) {
 
     return (
         <SlideFade in={hasResults}>
-            <Box
-                bg="purple.100"
-                borderRadius="base"
-                boxShadow="sm"
-                mt={4}
-                p={4}
-            >
+            <Box bg="gray.50" borderRadius="base" boxShadow="sm" mt={4} p={4}>
                 {results.map(({ result }) => {
                     return <ResultItem key={result.id} result={result} />;
                 })}
