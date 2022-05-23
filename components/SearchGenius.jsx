@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import queryGenius from "../services/queryGenius";
 import ResultsList from "./ResultsList";
 
-const DEBOUNCE_INTERVAL = 800;
+const DEBOUNCE_INTERVAL = 2000;
 
 function SearchGenius() {
     const [error, setError] = useState(null);
@@ -36,8 +36,6 @@ function SearchGenius() {
     );
 
     const handleChange = (event) => {
-        // if (event.target.value === "") return;
-
         handleSearch(event.target.value);
     };
 
