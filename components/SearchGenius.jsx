@@ -12,6 +12,7 @@ import queryGenius from "../services/queryGenius";
 import ResultsList from "./ResultsList";
 
 const DEBOUNCE_INTERVAL = 2000;
+const QUERY_THRESHOLD = 3;
 
 function SearchGenius() {
     const [error, setError] = useState(null);
@@ -42,6 +43,10 @@ function SearchGenius() {
     const handleSearch = (query) => {
         if (query === "") {
             setQuery(query);
+            return;
+        }
+
+        if (query.length < QUERY_THRESHOLD) {
             return;
         }
 
